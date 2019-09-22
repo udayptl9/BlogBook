@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="hidden">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Update Post</legend>
+            
+
+<div id="div_id_title" class="form-group"> <label for="id_title" class="col-form-label  requiredField">
+                Title<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="title" value="{{ post.title }}" maxlength="100" class="textinput textInput form-control" required id="id_title"> </div> </div> <div id="div_id_content" class="form-group"> <label for="id_content" class="col-form-label  requiredField">
+                Content<span class="asteriskField">*</span> </label> <div class=""> <textarea name="content" cols="40" rows="10" class="textarea form-control" required id="id_content">
+{{ post.content }}</textarea> </div> </div>
+
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
